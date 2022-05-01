@@ -16,6 +16,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 const DailyRecord = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const history = useNavigate();
   const viewTitleRef = useRef(null);
   const viewTextRef = useRef(null);
@@ -27,16 +28,16 @@ const DailyRecord = () => {
   const viewDescRef = useRef(null);
 
   const reloadLink = () => {
-    history("/readrecord");
+    history(`/readrecord`);
   };
 
   const removeData = (id) => {
-    fetch(`/daily-records/${id}`, {
+    fetch(`${PROXY}/daily-records/${id}`, {
       method: "DELETE",
     });
     localStorage.setItem("delete_tempReLoading", "delete_tempReLoading");
 
-    history("/readrecord");
+    history(`/readrecord`);
     alert("Data is deleted");
   };
 
@@ -52,7 +53,7 @@ const DailyRecord = () => {
     const titleResult = viewTitleRef.current.innerHTML;
     const textValue = viewTextRef.current.innerHTML;
     setEditorsAuthority(false);
-    fetch(`/daily-records/${id}`, {
+    fetch(`${PROXY}/daily-records/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

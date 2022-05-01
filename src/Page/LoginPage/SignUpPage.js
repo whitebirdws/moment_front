@@ -69,10 +69,10 @@ const DuplicateStatus = styled.input`
   margin-top: 10px;
   border-radius: 10px;
   background-color: #b1c6fe;
-
   border: none;
   border: 1px solid #fff;
   color: #fff;
+  cursor: pointer;
   font-weight: 600;
   padding: 5px;
 `;
@@ -149,15 +149,18 @@ const SignUpPage = () => {
   const confirmPwdRef = useRef("");
   const [idResultStatus, setIdResultStatus] = useState("");
   const [pwdReusltStatus, setPwdResultStatus] = useState("");
-
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const executeHomeFunc = () => {
     history("/");
   };
 
   function statusFetchData(signUpIdValue) {
-    fetch("https://moment-w.herokuapp.com/status-search", {
+    fetch(`${PROXY}/status-search`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "access-control-allow-origin": "*",
+      },
       body: JSON.stringify({
         signUpId: signUpIdValue,
       }),
@@ -175,9 +178,12 @@ const SignUpPage = () => {
     setPwdResultStatus(e.currentTarget.value);
   }, []);
   function submitFetchData(signUpIdValue, signUpPwdValue) {
-    fetch("https://moment-w.herokuapp.com/user-signUp", {
+    fetch(`${PROXY}/user-signUp`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "access-control-allow-origin": "*",
+      },
       body: JSON.stringify({
         signUp_id: signUpIdValue,
         signUp_password: signUpPwdValue,

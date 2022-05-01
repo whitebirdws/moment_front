@@ -98,6 +98,7 @@ const Label = styled.label`
 `;
 
 const LoginManager = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const history = useNavigate("");
   const dispatch = useDispatch();
 
@@ -113,7 +114,7 @@ const LoginManager = () => {
     dispatch(loginManagerActions.setUserId(userId));
   };
   function fetchData(id, pwd) {
-    fetch("/user-login", {
+    fetch(`${PROXY}/user-login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

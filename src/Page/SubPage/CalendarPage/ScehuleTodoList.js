@@ -256,6 +256,7 @@ const ListInitButton = styled.button`
   }
 `;
 const ScehuleTodoList = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const dispatch = useDispatch();
   const history = useNavigate();
   const inputMessageRef = useRef(null);
@@ -284,7 +285,7 @@ const ScehuleTodoList = () => {
 
   const cancelActionFunc = () => {
     dispatch(managerActions.setTodolistViewer(false));
-    history("/schedulelist");
+    history(`/schedulelist`);
   };
   const setTempMessageFunc = () => {
     setListMessage(inputMessageRef.current.value);
@@ -307,7 +308,7 @@ const ScehuleTodoList = () => {
     });
   };
   const executeFetchData = () => {
-    fetch("/addschedulelist", {
+    fetch(`${PROXY}/addschedulelist`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -326,7 +327,7 @@ const ScehuleTodoList = () => {
     executeFetchData();
     dispatch(managerActions.setTodolistViewer(false));
     alert("Data is saved");
-    history("/schedulelist");
+    history(`/schedulelist`);
     // window.location.reload();
   };
 
@@ -339,11 +340,11 @@ const ScehuleTodoList = () => {
         v.filter_month === todolistFilterMonth &&
         v.filter_date === todolistFilterDate
       ) {
-        fetch(`/update-schedulelist/${v.id}`, {
+        fetch(`${PROXY}/update-schedulelist/${v.id}`, {
           method: "DELETE",
         }).then((res) => res.json());
 
-        history("/schedulelist");
+        history(`/schedulelist`);
       }
     };
     dataList.map((v) => tempFunc(v));
@@ -382,7 +383,7 @@ const ScehuleTodoList = () => {
   };
 
   const modifyFetchData = () => {
-    fetch(`/update-schedulelist/${modifyId}`, {
+    fetch(`${PROXY}/update-schedulelist/${modifyId}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -399,7 +400,7 @@ const ScehuleTodoList = () => {
       alert("수정완료");
     }
 
-    history("/schedulelist");
+    history(`/schedulelist`);
   };
   const deleteMode = (id) => {
     //임시 데이터배열에서 개별 제거 위해서
@@ -463,7 +464,7 @@ const ScehuleTodoList = () => {
       ) {
         //임의적으로 리로드시
 
-        history("/schedulelist");
+        history(`/schedulelist`);
       }
     },
     [todolistFilterYear, todolistFilterMonth, todolistFilterDate, history]

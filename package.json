@@ -24,7 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://moment-w.herokuapp.com/",
+  "proxy": "https://moment-w.herokuapp.com",
   "eslintConfig": {
     "extends": [
       "react-app",

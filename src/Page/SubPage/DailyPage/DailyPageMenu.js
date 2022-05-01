@@ -137,6 +137,7 @@ const fontStyle = {
 };
 
 const DailyPageMenu = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const dispatch = useDispatch();
   const EditTitleRef = useRef(null);
   const TextAreaRef = useRef(null);
@@ -231,7 +232,7 @@ const DailyPageMenu = () => {
     }
   };
   const excuteFetchData = (titleResult, textResult) => {
-    fetch("/add-dailyrecords", {
+    fetch(`${PROXY}/add-dailyrecords`, {
       method: "POST",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify({

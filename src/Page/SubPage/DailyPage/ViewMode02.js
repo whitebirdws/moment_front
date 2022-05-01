@@ -102,6 +102,7 @@ const Span = styled.div`
   }
 `;
 const ViewMode02 = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const dispatch = useDispatch();
 
   const ViewAreaRef = useRef(null);
@@ -123,7 +124,7 @@ const ViewMode02 = () => {
   );
 
   const executeFetchData = useCallback(() => {
-    fetch("/daily-records", {
+    fetch(`${PROXY}/daily-records`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

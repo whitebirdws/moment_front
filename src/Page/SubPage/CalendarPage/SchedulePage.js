@@ -20,6 +20,7 @@ import {
 import { Link } from "react-router-dom";
 
 const SchedulePage = () => {
+  const PROXY = window.location.hostname === "localhost" ? "" : "/proxy";
   const dispatch = useDispatch();
   const date = new Date();
   let thisYear = date.getFullYear();
@@ -32,7 +33,7 @@ const SchedulePage = () => {
   const [calendarView, setCalendarView] = useState();
   const [testm, setTestm] = useState([]);
   const initData = useCallback(() => {
-    fetch("/research-schedulelist", {
+    fetch(`${PROXY}/research-schedulelist`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
