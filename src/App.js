@@ -18,7 +18,6 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginManager />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/alarmpage" element={<AlarmPage />} />
         <Route path="/writerecord" element={<ContentsPage />} />
         <Route path="/readrecord" element={<ContentsPage01 />} />
         <Route
