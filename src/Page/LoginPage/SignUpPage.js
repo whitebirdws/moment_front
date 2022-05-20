@@ -7,19 +7,18 @@ import img01 from "../../img/backgroundImg1.jpg";
 const SignUpManagerContainer = styled.div`
   width: 1200px;
   height: 600px;
-
-  margin: 180px auto 0;
+  margin: 200px auto;
   background-image: url(${img01});
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  opacity: 0.8;
   border-radius: 50px;
+  opacity: 0.8;
   @media (max-width: 1600px) {
-    margin-left: 0;
-    margin: 50px auto 50px;
+    margin: 50px auto;
     width: 90%;
   }
+
   &:hover {
     opacity: 1;
   }
@@ -27,7 +26,12 @@ const SignUpManagerContainer = styled.div`
 const SignUpManagerSubContainer = styled.div`
   width: 500px;
   height: 600px;
+
   margin: 0 auto;
+
+  @media (max-width: 1600px) {
+    width: 100%;
+  }
 `;
 const HomeButtonManager = styled.div`
   width: 100px;
@@ -51,6 +55,9 @@ const HomeButton = styled.button`
 const FormLayout = styled.div`
   width: 300px;
   margin: 0 auto;
+  @media (max-width: 500px) {
+    margin-top: -80px;
+  }
 `;
 const SignUpId = styled.input`
   width: 300px;
@@ -94,8 +101,11 @@ const SignUpPassword = styled.input`
   width: 300px;
   height: 30px;
   border-radius: 10px;
-
   border: 1px solid #fff;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
   &:focus {
     outline: none;
   }
@@ -133,6 +143,14 @@ const H2 = styled.h2`
   font-size: 6em;
   text-align: center;
   text-shadow: 2px 2px 2px #fff;
+  @media (max-width: 500px) {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 const Label = styled.label`
   color: #3e3e3e;

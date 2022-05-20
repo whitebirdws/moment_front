@@ -13,8 +13,9 @@ const LoginManagerContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.8;
   border-radius: 50px;
+  opacity: 0.8;
+
   @media (max-width: 1600px) {
     margin-left: 0;
     margin: 50px auto 50px;
