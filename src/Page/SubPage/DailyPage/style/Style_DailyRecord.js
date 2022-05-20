@@ -2,9 +2,7 @@ import styled from "styled-components";
 
 export const DailyRecordContainer = styled.div`
   width: 73vw;
-
   margin-top: 10px;
-
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -94,14 +92,13 @@ export const ViewDescArea = styled.div`
   padding: 10px;
   cursor: pointer;
   @media (max-width: 1600px) {
-    width: 900px;
+    width: 980px;
     margin: 0 auto;
   }
 
-  @media (max-width: 1200px) {
-    width: 90%;
-    display: flex;
-    justify-content: center;
+  @media (max-width: 980px) {
+    width: 100vw;
+    margin: 0 auto;
   }
 `;
 export const ViewDescText = styled.div`

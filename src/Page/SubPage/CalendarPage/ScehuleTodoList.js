@@ -23,7 +23,7 @@ const ScehuleTodoListLayoutContainer = styled.div`
   display: flex;
   background-color: rgba(255, 254, 254, 0.5);
 
-  overflow: scroll;
+  overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -178,10 +178,10 @@ const ReadResultViewerDesc = styled.div`
   padding: 5px;
   padding-left: 10px;
   text-align: center;
-  overflow: scroll;
-  &::-webkit-scrollbar {
+  overflow-y: scroll;
+  /* &::-webkit-scrollbar {
     display: none;
-  }
+  } */
   @media (max-width: 1600px) {
     width: 500px;
     height: 50px;
@@ -209,7 +209,7 @@ const ResultViewerDesc = styled.div`
   padding: 5px;
   padding-left: 10px;
   text-align: center;
-  overflow: scroll;
+  overflow-y: scroll;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -219,6 +219,10 @@ const ResultViewerDesc = styled.div`
   }
   @media (max-width: 768px) {
     width: 300px;
+    height: 50px;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
     height: 50px;
   }
 `;
