@@ -94,11 +94,12 @@ export const ViewDescArea = styled.div`
   padding: 10px;
   cursor: pointer;
   @media (max-width: 1600px) {
-    width: 800px;
+    width: 900px;
+    margin: 0 auto;
   }
 
   @media (max-width: 1200px) {
-    width: 900px;
+    width: 90%;
     display: flex;
     justify-content: center;
   }

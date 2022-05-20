@@ -1,4 +1,3 @@
-import AlarmPage from "./Page/SubPage/DailyPage/AlarmPage";
 import ContentsPage from "./Page/ParentPage/ContensPage/ContentsPage";
 import ContentsPage01 from "./Page/ParentPage/ContensPage/ContentsPage01";
 import ContentsPage02 from "./Page/ParentPage/ContensPage/ContentsPage02";

@@ -5,6 +5,7 @@ import DailyRecord from "../../SubPage/DailyPage/DailyRecord";
 import styled from "styled-components";
 const ContentsPageContainer = styled.div`
   display: flex;
+
   background: -webkit-linear-gradient(
     -45deg,
     rgba(210, 223, 237, 1) 0%,
@@ -17,14 +18,25 @@ const ContentsPageContainer = styled.div`
     rgba(121, 155, 200, 1) 100%
   );
 `;
+const SubContentsPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: 1600px) {
+    width: 100%;
+    height: 900px;
+  }
+`;
 
 const RecordManager = () => {
   return (
     <ContentsPageContainer>
       <MenuPage />
-      <ResponsiveMenuPage />
+      <SubContentsPageContainer>
+        <ResponsiveMenuPage />
 
-      <DailyRecord />
+        <DailyRecord />
+      </SubContentsPageContainer>
     </ContentsPageContainer>
   );
 };

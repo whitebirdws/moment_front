@@ -31,7 +31,7 @@ const ContentsPageContainer = styled.div`
 `;
 const ContentsPageSubContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 `;
 const ContentsPage01 = () => {
   return (

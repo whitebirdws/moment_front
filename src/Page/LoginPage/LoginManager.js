@@ -8,7 +8,6 @@ import img01 from "../../img/backgroundImg1.jpg";
 const LoginManagerContainer = styled.div`
   width: 1200px;
   height: 500px;
-
   margin: 200px auto;
   background-image: url(${img01});
   background-position: center;
@@ -27,9 +26,12 @@ const LoginManagerContainer = styled.div`
 `;
 const LoginManagerSubContainer = styled.div`
   width: 500px;
-
   margin: 0 auto;
+  @media (max-width: 1600px) {
+    width: 100%;
+  }
 `;
+
 const HomeButtonManager = styled.div`
   width: 100px;
   margin: 0 auto;
@@ -91,6 +93,14 @@ const H2 = styled.h2`
   color: #3e3e3e;
   font-size: 8em;
   text-shadow: 2px 2px 2px #fff;
+  @media (max-width: 500px) {
+    font-size: 2em;
+    text-align: center;
+    margin: 0 auto;
+  }
+  @media (max-width: 300px) {
+    width: 100%;
+  }
 `;
 const Label = styled.label`
   color: #3e3e3e;
@@ -129,6 +139,7 @@ const LoginManager = () => {
           exucteUserIdActions(data.loginId);
           localStorage.setItem("user", data.flagId);
           localStorage.setItem("loginUserName", data.loginId);
+        } else {
         }
       });
   }

@@ -33,40 +33,30 @@ const MenuLi = styled.li`
   font-family: "Roboto-Regular";
   font-weight: 700;
   text-align: center;
-  @media (max-width: 480px) {
-    font-size: 0.6em;
-  }
+  margin-left: 1.5vw;
+  margin-top: 30px;
+  width: 85px;
+  height: 30px;
+  line-height: 30px;
+
+  border-radius: 10px;
+
   &:nth-child(1) {
     margin-top: 10px;
+    background-color: none;
+    border: none;
   }
-
-  &:nth-child(2) {
-    margin-left: 1.5vw;
-    width: 100px;
-    height: 94px;
-    line-height: 94px;
-    border-radius: 45px;
-  }
-  &:nth-child(3) {
-    margin-left: 1.5vw;
-    width: 100px;
-    height: 94px;
-    line-height: 94px;
-    border-radius: 45px;
-  }
-  &:nth-child(4) {
-    margin-left: 1.5vw;
-    width: 100px;
-    height: 94px;
-    line-height: 94px;
-    border-radius: 45px;
-  }
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4),
   &:nth-child(5) {
-    margin-left: 1.5vw;
-    width: 100px;
-    height: 94px;
-    line-height: 94px;
-    border-radius: 45px;
+    background-color: #7c81eb;
+  }
+  @media (max-width: 500px) {
+    font-size: 0.6em;
+    &:nth-child(1) {
+      display: none;
+    }
   }
 `;
 
